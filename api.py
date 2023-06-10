@@ -1,4 +1,5 @@
 from flask import Flask, request, Response, jsonify
+from start import *
 
 app = Flask(__name__)
 
@@ -7,4 +8,4 @@ def test():
     return 'Hello, World!'
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    app.run(port=SERVER_PORT, debug=True)
