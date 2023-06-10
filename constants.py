@@ -1,7 +1,7 @@
 import os.path as path
 
 DB_NAME = 'Task.db'
-BASE_DIR = path.abspath(os.path.dirname(__file__))
+BASE_DIR = path.abspath(path.dirname(__file__))
 DATABASE_URI = 'sqlite:///' + path.join(BASE_DIR, DB_NAME)
 
 SERVER_PORT = 8080
