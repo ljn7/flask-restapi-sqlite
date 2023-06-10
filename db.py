@@ -1,3 +1,4 @@
+from sqlalchemy import CheckConstraint
 from start import *
 
 class Tasks(db.Model):
@@ -6,7 +7,7 @@ class Tasks(db.Model):
     title = Column(String)
     description = Column(String)
     due_date = Column(String)
-    status = Column(String)
+    status = Column(String, CheckConstraint("status IN ('one', 'two', 'three')"))
 
     def __init__(self, title, description, due_date, status):
         self.title = title
