@@ -1,9 +1,8 @@
-import os
-import os.path
+import os.path as path
 
 DB_NAME = 'Task.db'
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, DB_NAME)
+BASE_DIR = path.abspath(os.path.dirname(__file__))
+DATABASE_URI = 'sqlite:///' + path.join(BASE_DIR, DB_NAME)
 
 SERVER_PORT = 8080
 
@@ -12,3 +11,4 @@ ERROR_RESOURCE_NOT_FOUND = 401
 ERROR_RESOURCE_ALREADY_EXISTS = 409
 ERROR_BAD_REQUEST = 400
 SUCCESS_RESPONSE = 201
+ERROR_INTERNAL_SERVER = 500
