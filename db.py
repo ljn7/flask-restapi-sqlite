@@ -7,7 +7,7 @@ class Tasks(db.Model):
     title = Column(String)
     description = Column(String)
     due_date = Column(String)
-    status = Column(String, CheckConstraint("status IN ('one', 'two', 'three')"))
+    status = Column(String, CheckConstraint("status IN ('Incomplete', 'In Progress', 'Completed')"))
 
     def __init__(self, title, description, due_date, status):
         self.title = title
