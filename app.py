@@ -5,16 +5,30 @@ from commands import *
 
 @app.route('/')
 def welcome():
-    return """<pre>Available routes:
-                /task/{id}
-                /task/create?title='String'&description='String'&due_date='String'&status='String'
-                /task/updatebyid?id='Number'&title='String'&description='String'&due_date='String'&status='String'
-                /task/deletebyid?id='Number'
-                /tasks
-                Note:
-                To send forward slashes on due date from url query using %2F instead / 
-                    for example 01%2F01%2F2023 instead of 01/01/2023</pre>
-    """
+    routes = [
+        {
+            "url": "/task/{id}",
+            "description": "Retrieve a specific task by ID."
+        },
+        {
+            "url": "/task/create",
+            "description": "Create a new task."
+        },
+        {
+            "url": "/task/updatebyid",
+            "description": "Update a task by ID."
+        },
+        {
+            "url": "/task/deletebyid?id={Number}",
+            "description": "Delete a task by ID."
+        },
+        {
+            "url": "/tasks",
+            "description": "Retrieve all tasks with pagination support."
+        }
+    ]
+
+    return jsonify(routes= routes)
 
 @app.route('/tasks', methods=['GET'])
 def get_all_tasks():
