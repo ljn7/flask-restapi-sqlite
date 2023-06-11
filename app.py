@@ -19,7 +19,7 @@ def welcome():
             "description": "Update a task by ID."
         },
         {
-            "url": "/task/deletebyid?id={Number}",
+            "url": "/task/deletebyid?id={int: id}",
             "description": "Delete a task by ID."
         },
         {
